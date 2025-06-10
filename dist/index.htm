@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramin Allazov - SDET Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-8 pb-2 border-b-2 border-sky-500;
+        }
+        .card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl; /* Added hover:shadow-xl */
+        }
+        .tag {
+            @apply bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2 transition-transform duration-200 hover:bg-sky-200 hover:-translate-y-0.5; /* Added hover effect for tags */
+             margin-right: 0.5rem; /* Horizontal spacing */
+             margin-bottom: 0.5rem; /* Vertical spacing */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Animated Gradient Background for Hero Section */
+        .animated-gradient {
+            background: linear-gradient(-45deg, #0ea5e9, #0284c7, #0369a1, #075985); /* Sky-500 to Sky-800 range */
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Styling for the hero image to ensure it's circular and well-placed */
+        .hero-image-container {
+            @apply w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-6 border-4 border-white shadow-lg overflow-hidden flex justify-center items-center bg-sky-100; /* Added a light bg for loading */
+        }
+        .hero-image {
+            @apply w-full h-full object-cover;
+        }
+        #imageLoadingIndicator {
+            @apply text-white text-lg;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-700 leading-relaxed">
+
+    <!-- Header/Navigation -->
+    <header class="bg-sky-600 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-3xl font-bold">Ramin Allazov</h1>
+            <nav class="mt-4 sm:mt-0">
+                <a href="#about" class="px-3 py-2 hover:bg-sky-700 rounded-md transition-colors duration-200">About</a>
+                <a href="#skills" class="px-3 py-2 hover:bg-sky-700 rounded-md transition-colors duration-200">Skills</a>
+                <a href="#experience" class="px-3 py-2 hover:bg-sky-700 rounded-md transition-colors duration-200">Experience</a>
+                <a href="#projects" class="px-3 py-2 hover:bg-sky-700 rounded-md transition-colors duration-200">Projects</a>
+                <a href="#education" class="px-3 py-2 hover:bg-sky-700 rounded-md transition-colors duration-200">Education</a>
+                <a href="#contact" class="px-3 py-2 hover:bg-sky-700 rounded-md transition-colors duration-200">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="animated-gradient text-white py-20 px-6 text-center"> <!-- Applied animated-gradient class -->
+        <div class="container mx-auto">
+            <!-- Updated Image Container -->
+            <div id="heroImageContainer" class="hero-image-container">
+               <p id="imageLoadingIndicator">MIND MAP FOR SDET</p>
+
+                <img id="heroProfileImage" src="./SDET_Mind_Map.jpg" alt="Ramin Allazov - SDET Abstract Mind Map" class="hero-image">
+            </div>
+            <h2 class="text-5xl font-bold mb-4">Ramin Allazov</h2>
+            <p class="text-2xl mb-8">Senior Software Development Engineer in Test (SDET)</p>
+            <a href="#contact" class="bg-white text-sky-600 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 transform hover:scale-105">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="section-title text-center">About Me</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <p class="mb-4 text-lg">
+                    Senior Software Development Engineer in Test with 10+ years of experience with emphasis on Quality Assurance through Manual and Automation testing of web-based and client-server applications.
+                </p>
+                <p class="mb-4 text-lg">
+                    Obtained working experience in various phases of Software Development Life Cycles (SDLC), Software Testing Life Cycles (STLC) and Defect Life Cycle and methods like Agile SCRUM, and Waterfall Model. Strong TDD exposure, contributing test cases before feature readiness.
+                </p>
+                <p class="text-lg">
+                    Self-motivated, diligent, dedicated, detail-oriented, and innovative team-player/builder. Ability to adapt to new environments quickly, strong team player, good communication, good analytical and computation skills, enthusiastic learner, confident, sincere and committed.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="section-title text-center">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Category Card -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-sky-600 mb-3">Test Management & Automation</h3>
+                    <div class="flex flex-wrap">
+                        <span class="tag">HP Quality Center</span>
+                        <span class="tag">ALM</span>
+                        <span class="tag">JIRA</span>
+                        <span class="tag">Radar</span>
+                        <span class="tag">Rally</span>
+                        <span class="tag">Selenium WebDriver/IDE</span>
+                        <span class="tag">Cucumber</span>
+                        <span class="tag">Maven</span>
+                        <span class="tag">Appium</span>
+                        <span class="tag">Perfecto</span>
+                        <span class="tag">Rest Assured</span>
+                        <span class="tag">HTTP Client</span>
+                        <span class="tag">TestNG</span>
+                        <span class="tag">Pytest</span>
+                    </div>
+                </div>
+                 <!-- Skill Category Card -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-sky-600 mb-3">Programming & Databases</h3>
+                    <div class="flex flex-wrap">
+                        <span class="tag">JAVA</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">XML</span>
+                        <span class="tag">JSON</span>
+                        <span class="tag">Oracle Apex</span>
+                        <span class="tag">MySQL Server</span>
+                        <span class="tag">JDBC</span>
+                        <span class="tag">Redis Graph</span>
+                        <span class="tag">Mongo</span><span class="tag">Doc DB</span>
+                    </div>
+                </div>
+                 <!-- Skill Category Card -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-sky-600 mb-3">Tools & Methodologies</h3>
+                    <div class="flex flex-wrap">
+                        <span class="tag">Git</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">BitBucket</span>
+                        <span class="tag">GitLab</span>
+                        <span class="tag">Agile</span>
+                        <span class="tag">Waterfall</span>
+                        <span class="tag">IBM ODM</span>
+                        <span class="tag">PuTTY</span>
+                        <span class="tag">MobaxTerm</span>
+                        <span class="tag">IntelliJ</span>
+                        <span class="tag">Eclipse</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Postman</span>
+                        <span class="tag">Swagger</span>
+                        <span class="tag">PCF</span>
+                        <span class="tag">Jenkins</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">EDI Notepad</span>
+                        <span class="tag">Charles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 px-6">
+        <div class="container mx-auto">
+            <h2 class="section-title text-center">Professional Experience</h2>
+            <div class="space-y-12">
+                <!-- MasterCard -->
+                <div class="card md:flex">
+                    <div class="md:w-1/4 bg-sky-500 text-white p-6 rounded-l-xl flex flex-col justify-center items-center text-center">
+                        <h3 class="text-xl font-bold">MasterCard</h3>
+                        <p class="text-sm">St Louis MO (Remote)</p>
+                        <p class="text-sm font-medium mt-1">Nov 2022 – May 2025</p>
+                    </div>
+                    <div class="md:w-3/4 p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Sr SDET</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Spearheaded the DMP project focusing on real-time and stand-in transaction processing.</li>
+                            <li>Integrated Report Portal for enhanced framework level reporting for upper management.</li>
+                            <li>Maintained dependencies in pre-decommissioned project, critical for migration and release deployments.</li>
+                            <li>Added Rally Reporting API/listener to update Rally reports after regression runs.</li>
+                            <li>Utilized Swagger for API contract retrieval and validation, improving efficiency.</li>
+                            <li>Reduced regression testing duration from 2 weeks to a few hours by fixing and automating test cases.</li>
+                            <li>Achieved 95% automation of Stand-In test cases.</li>
+                            <li>Managed and refactored the entire Stand-in Repository.</li>
+                            <li>Collaborated with cross-functional teams, mentored new team members, and conducted knowledge transfer sessions.</li>
+                            <li>Worked with PCF, vAppDeployer, EIBs, GemFire Grid, PuTTY, and MobaxTerm.</li>
+                            <li>Added PDM simulator and DMX Jobs (Syncsort) in transaction processing automation framework.</li>
+                            <li>Contributed to TDD aligned workflow by writing failing test cases in anticipation of new code.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apple -->
+                <div class="card md:flex">
+                     <div class="md:w-1/4 bg-sky-500 text-white p-6 rounded-l-xl flex flex-col justify-center items-center text-center">
+                        <h3 class="text-xl font-bold">Apple</h3>
+                        <p class="text-sm">Austin TX (Remote)</p>
+                        <p class="text-sm font-medium mt-1">Oct 2021 – Aug 2022</p>
+                    </div>
+                    <div class="md:w-3/4 p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Sr SDET</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Performed regression testing for new deployments and closed radars in Radar bug tracking tool.</li>
+                            <li>Contributed to test-driven efforts by preparing automation scripts ahead of feature deployment.</li>
+                            <li>Validated bugs, fixed and modified using Java SpringBoot.</li>
+                            <li>Used Radar to track and report system defects. Prepared Test Plan, Test cases with Quip files.</li>
+                            <li>Responsible for deploying artifacts in Pie compute and Kube.</li>
+                            <li>Maintained test automation framework and performed data-driven testing.</li>
+                            <li>Used Charles for API Inspection and DocDB queries for exploratory testing.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cigna -->
+                <div class="card md:flex">
+                    <div class="md:w-1/4 bg-sky-500 text-white p-6 rounded-l-xl flex flex-col justify-center items-center text-center">
+                        <h3 class="text-xl font-bold">Cigna</h3>
+                        <p class="text-sm">Portland, OR (Remote)</p>
+                        <p class="text-sm font-medium mt-1">Aug 2018 – Oct 2021</p>
+                    </div>
+                    <div class="md:w-3/4 p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Sr SDET</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Used JIRA for analyzing User Stories and tracking defects.</li>
+                            <li>Experience with RESTful web services authentication (Basic Auth, SSL, OAUTH).</li>
+                            <li>Experience with AWS for parallel testing using docker containers on C2 instances.</li>
+                            <li>Automated RESTful webservices testing using REST-Assured.</li>
+                            <li>Developed and maintained automation test scripts using Java and Selenium.</li>
+                            <li>Connected to database using SQL for data verification and validation.</li>
+                            <li>Performed manual validation of healthcare EDI transactions (834, 837) using EDI Notepad and Postman.</li>
+                            <li>Ensured compliance with HIPAA and ANSI X12 standards.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Goldman Sachs -->
+                 <div class="card md:flex">
+                    <div class="md:w-1/4 bg-sky-500 text-white p-6 rounded-l-xl flex flex-col justify-center items-center text-center">
+                        <h3 class="text-xl font-bold">Goldman Sachs</h3>
+                        <p class="text-sm">New York, NY</p>
+                        <p class="text-sm font-medium mt-1">Apr 2016 – Aug 2018</p>
+                    </div>
+                    <div class="md:w-3/4 p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Test Automation Engineer</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Automated enterprise web and mobile test cases using Selenium WebDriver, Java, and Cucumber with a Gradle-based framework.</li>
+                            <li>Used Perfecto for mobile automation testing.</li>
+                            <li>Led framework cleanup and enhancement for the existing Cucumber BDD setup.</li>
+                            <li>Implemented Jira plugin integration to automatically trigger tests and publish results.</li>
+                            <li>Scheduled and validated Salesforce automation workflows.</li>
+                            <li>Wrote and optimized feature files, step definitions, and reusable page objects.</li>
+                            <li>Supported BDD/TDD-aligned workflow by collaborating with developers.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Bain & Company -->
+                 <div class="card md:flex">
+                    <div class="md:w-1/4 bg-sky-500 text-white p-6 rounded-l-xl flex flex-col justify-center items-center text-center">
+                        <h3 class="text-xl font-bold">Bain & Company</h3>
+                        <p class="text-sm">Austin, TX</p>
+                        <p class="text-sm font-medium mt-1">Feb 2015 – Mar 2016</p>
+                    </div>
+                    <div class="md:w-3/4 p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Software Test Analyst</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Performed regression testing for fixes and closed defects in ALM.</li>
+                            <li>Created, debugged, and executed test cases using Java.</li>
+                            <li>Used HP ALM to track and report system defects.</li>
+                            <li>Implemented agile QA processes and practices.</li>
+                            <li>Performed data-driven testing using Excel files.</li>
+                            <li>Created SQL queries for data verification.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="section-title text-center">Personal Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-sky-600 mb-3">Subscription Management API</h3>
+                    <p class="mb-3">Developed a React and TypeScript based Subscription management API with Express.JS, integrated with SendGrid email API.</p>
+                    <div class="flex flex-wrap">
+                        <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Express.js</span><span class="tag">Node.js</span><span class="tag">SendGrid</span><span class="tag">API</span>
+                    </div>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-sky-600 mb-3">Python API & Data Validation</h3>
+                    <p class="mb-3">Utilized Pytest framework in personal Python projects to build and run unit and integration tests for API and data validation.</p>
+                     <div class="flex flex-wrap">
+                        <span class="tag">Python</span><span class="tag">Pytest</span><span class="tag">API Testing</span><span class="tag">Data Validation</span>
+                    </div>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-sky-600 mb-3">E-Commerce Application</h3>
+                    <p class="mb-3">Created E-Commerce Application with custom-built checkout and cart pages using React-Typescript, integrated with Stripe to handle payment processing.</p>
+                    <div class="flex flex-wrap">
+                        <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Stripe</span><span class="tag">E-commerce</span>
+                    </div>
+                </div>
+                 <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-sky-600 mb-3">Open Source Contributions</h3>
+                    <p class="mb-3">Contributed to open-source repositories on GitHub, including fixing Allure Report plugin issues, demonstrating collaboration and technical troubleshooting skills.</p>
+                    <div class="flex flex-wrap">
+                        <span class="tag">GitHub</span><span class="tag">Open Source</span><span class="tag">Allure Report</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 px-6">
+        <div class="container mx-auto max-w-2xl text-center">
+            <h2 class="section-title">Education</h2>
+            <div class="card p-8 inline-block">
+                <h3 class="text-2xl font-semibold text-sky-600">STATE ECONOMIC UNIVERSITY OF AZERBAIJAN</h3>
+                <p class="text-lg mt-1">Bachelor's Degree</p>
+                <p class="text-gray-500">2001 – 2005</p>
+                <p class="mt-4 text-lg">Python certificate from University of Michigan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 bg-sky-700 text-white"> <!-- Changed background for better contrast with footer -->
+        <div class="container mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl font-bold mb-8 pb-2 border-b-2 border-sky-400 inline-block">Get in Touch</h2>
+            <p class="text-lg mb-8">
+                I'm always open to discussing new opportunities, projects, or collaborations.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
+                <a href="mailto:mr.raminallazov@gmail.com" class="flex items-center bg-white text-sky-600 px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                    </svg>
+                    mr.raminallazov@gmail.com
+                </a>
+                <a href="tel:+13123204525" class="flex items-center bg-white text-sky-600 px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z" />
+                    </svg>
+                    (312) 320-4525
+                </a>
+                <a href="https://www.linkedin.com/in/ramin-allazov/" target="_blank" rel="noopener noreferrer" class="flex items-center bg-white text-sky-600 px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8 text-center">
+        <div class="container mx-auto">
+            <p>&copy; <span id="currentYear"></span> Ramin Allazov. All rights reserved.</p>
+            <p class="text-sm mt-1">Designed with Tailwind CSS</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('header nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Calculate position of target element relative to the viewport, considering the sticky header
+                    const headerOffset = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // --- Image Generation for Hero Section ---
+        async function generateAndSetHeroImage() {
+            //const heroImageElement = document.getElementById('heroProfileImage');
+            //const loadingIndicator = document.getElementById('imageLoadingIndicator');
+            // const imageContainer = document.getElementById('heroImageContainer'); // This line is not strictly necessary if not used later
+
+            // Updated prompt to explicitly exclude human faces/figures
+            const prompt = "Create a vibrant and colorful abstract digital art piece, designed to fit a circular profile image. The artwork should be a conceptual mind map, visually representing interconnected software testing and automation themes such as SDLC, STLC, Agile, Selenium, Java, Python, CI/CD, JIRA, API testing, and cloud technologies. The design should feature flowing lines and nodes, rendered in a modern, clean, and slightly futuristic style. Crucially, the image must not contain any human figures, faces, or recognizable human-like features. The focus should be purely on an abstract, aesthetically pleasing visualization of these technical concepts.";
+            const payload = { instances: [{ prompt: prompt }], parameters: { "sampleCount": 1 } };
+            const apiKey = ""; // API key will be injected by the environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                    const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                    heroImageElement.src = imageUrl;
+                    heroImageElement.classList.remove('hidden'); // Show the image
+                    loadingIndicator.classList.add('hidden'); // Hide loading indicator
+                } else {
+                    console.error("Image generation failed or returned unexpected format:", result);
+                    loadingIndicator.textContent = "Error loading image.";
+                    // Fallback to a placeholder if generation fails
+                    heroImageElement.src = 'https://placehold.co/200x200/FFFFFF/0284c7?text=Abstract+Art'; // Sky-700 background
+                    heroImageElement.classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error("Error fetching image:", error);
+                loadingIndicator.textContent = "Error fetching image.";
+                heroImageElement.src = 'https://placehold.co/200x200/FFFFFF/0369a1?text=Network+Error'; // Sky-800 background
+                heroImageElement.classList.remove('hidden');
+            }
+        }
+
+        // Call the function to generate and set the image when the page loads
+        window.onload = function() {
+           // generateAndSetHeroImage();
+            // Any other onload functions can be added here
+        };
+
+    </script>
+
+</body>
+</html>
