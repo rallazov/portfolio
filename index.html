@@ -7,65 +7,7 @@
     <title>Ramin Allazov - SDET Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .section-title {
-            @apply text-3xl font-bold text-gray-800 mb-8 pb-2 border-b-2 border-sky-500;
-        }
-        .card {
-            @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl; /* Added hover:shadow-xl */
-        }
-        .tag {
-            @apply bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2 transition-transform duration-200 hover:bg-sky-200 hover:-translate-y-0.5; /* Added hover effect for tags */
-        }
-        /* Custom scrollbar for better aesthetics */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        /* Animated Gradient Background for Hero Section */
-        .animated-gradient {
-            background: linear-gradient(-45deg, #0ea5e9, #0284c7, #0369a1, #075985); /* Sky-500 to Sky-800 range */
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* Styling for the hero image to ensure it's circular and well-placed */
-        .hero-image-container {
-            @apply w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-6 border-4 border-white shadow-lg overflow-hidden flex justify-center items-center bg-sky-100; /* Added a light bg for loading */
-        }
-        .hero-image {
-            @apply w-full h-full object-cover;
-        }
-        #imageLoadingIndicator {
-            @apply text-white text-lg;
-        }
-    </style>
+    <link rel="stylesheet" href="./dist/styles.css">
 </head>
 <body class="bg-gray-100 text-gray-700 leading-relaxed">
 
@@ -91,7 +33,7 @@
             <div id="heroImageContainer" class="hero-image-container">
                <p id="imageLoadingIndicator">MIND MAP FOR SDET</p>
 
-                <img id="heroProfileImage" src="./ramin-allazov-sdet-mind-map.jpg" alt="Ramin Allazov - SDET Abstract Mind Map" class="hero-image">
+                <img id="heroProfileImage" src="./src/assets/ramin-allazov-sdet-mind-map.jpg" alt="Ramin Allazov - SDET Abstract Mind Map" class="hero-image">
             </div>
             <h2 class="text-5xl font-bold mb-4">Ramin Allazov</h2>
             <p class="text-2xl mb-8">Senior Software Development Engineer in Test (SDET)</p>
