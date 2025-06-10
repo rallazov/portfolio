@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-gray-50 text-gray-800 leading-relaxed;
+}
+
+/* Typography Improvements */
+.section-title {
+    @apply text-3xl font-bold text-gray-100 mb-8 pb-2 border-b-2 border-sky-600;
+}
+
+h1 {
+    @apply text-4xl md:text-5xl font-bold text-gray-100 mb-6;
+}
+
+h2 {
+    @apply text-3xl md:text-4xl font-bold text-gray-900 mb-5;
+}
+
+h3 {
+    @apply text-2xl md:text-3xl font-semibold text-gray-800 mb-4;
+}
+
+h4 {
+    @apply text-xl md:text-2xl font-semibold text-gray-800 mb-3;
+}
+
+p {
+    @apply mb-4 text-gray-700;
+}
+
+/* Cards and Containers */
+.card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 
+    hover:scale-105 hover:shadow-xl mb-6;
+}
+
+/* Tags and Labels */
+.tag {
+    @apply inline-flex bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm font-medium 
+    mr-2 mb-2 transition-transform duration-200 hover:bg-sky-200 hover:-translate-y-0.5;
+}
+
+/* Lists */
+ul.list-disc {
+    @apply space-y-3 text-gray-700 ml-6;
+}
+
+
+/* Hero Section Improvements */
+.hero {
+    @apply relative text-center py-20;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/mind-map.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    @apply text-white text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg;
+}
+
+.hero p {
+    @apply text-gray-300 text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-lg;
+}
+
+/* Section Improvements */
+section {
+    @apply py-16 md:py-24;
+}
+
+section:nth-child(even) {
+    @apply bg-white shadow-inner;
+}
+
+section:nth-child(odd) {
+    @apply bg-gray-50;
+}
+
+/* Content Container */
+.container {
+    @apply max-w-6xl mx-auto px-4 md:px-8;
+}
+
+/* Typography Enhancement */
+.section-title {
+    @apply text-3xl font-bold text-gray-900 mb-8 pb-2 border-b-2 border-sky-600 inline-block;
+}
+
+
+/* Section Spacing and Background */
+
+
+
+/* Header/Navigation */
+header {
+    @apply bg-sky-700 text-white shadow-md;
+}
+
+/* Navigation Links */
+nav a {
+    @apply text-white hover:bg-sky-600 transition-colors duration-200;
+}
