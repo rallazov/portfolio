@@ -90,6 +90,27 @@
             margin: 0.5rem auto 0;
             border-radius: 2px;
         }
+
+        /* BRUTE FORCE OVERRIDES to ensure Mobile Menu works even if Tailwind is cached/slow */
+        #mobile-menu {
+            background-color: #020617 !important;
+            /* Slate-950/Black */
+            z-index: 99999 !important;
+        }
+
+        /* Ensure the menu is actually hidden/shown by class toggles even if classes fail */
+        #mobile-menu.opacity-0 {
+            opacity: 0 !important;
+            pointer-events: none !important;
+            visibility: hidden !important;
+            /* Extra safety */
+        }
+
+        #mobile-menu.opacity-100 {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            visibility: visible !important;
+        }
     </style>
 
 </head>
@@ -97,14 +118,26 @@
 <body class="bg-slate-50 text-slate-700 leading-relaxed antialiased">
 
     <!-- Header/Navigation (Transparent/Glass AI Theme) -->
+    <!-- Header/Navigation (Transparent/Glass AI Theme) -->
     <header
-        class="bg-transparent backdrop-blur-sm fixed top-0 w-full z-50 transition-all duration-300 hover:bg-slate-900/80">
-        <div class="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center">
-            <h1 class="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2 drop-shadow-lg">
+        class="bg-transparent backdrop-blur-sm fixed top-0 w-full z-50 transition-all duration-300 hover:bg-slate-900/90"
+        id="main-header">
+        <div class="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2 drop-shadow-lg z-50">
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400">Ramin</span>
                 Allazov
             </h1>
-            <nav class="mt-4 sm:mt-0 flex gap-6 text-sm font-medium items-center">
+
+            <!-- Mobile Menu Button (Visible on mobile & tablet) -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none z-50 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Desktop Nav (Visible on lg+ i.e. Laptops/Desktops) -->
+            <nav class="hidden lg:flex gap-6 text-sm font-medium items-center">
                 <a href="#about"
                     class="text-slate-200 hover:text-white hover:underline decoration-sky-500 decoration-2 underline-offset-4 transition-all duration-200 drop-shadow-md">About</a>
                 <a href="#skills"
@@ -118,12 +151,14 @@
                 <a href="#contact"
                     class="px-5 py-2.5 bg-sky-600/90 text-white rounded-full hover:bg-sky-500 transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(14,165,233,0.5)] border border-sky-400/30 backdrop-blur-md">Contact</a>
             </nav>
+
+
         </div>
     </header>
 
     <!-- Hero Section (AI/Tech Dynamic) -->
     <section
-        class="relative bg-slate-900 text-white py-32 px-6 text-center overflow-hidden min-h-[600px] flex flex-col justify-center">
+        class="relative bg-slate-900 text-white py-24 md:py-32 px-6 text-center overflow-hidden min-h-[500px] md:min-h-[600px] flex flex-col justify-center">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="src/assets/hero-bg.png" alt="AI Tech Background"
@@ -131,27 +166,29 @@
             <div class="absolute inset-0 bg-gradient-to-b from-slate-900/30 via-transparent to-slate-50"></div>
         </div>
 
-        <div class="container mx-auto relative z-10">
+        <div class="container mx-auto relative z-10 pt-10 md:pt-0">
+            <!-- Added padding top for mobile to clear header -->
             <div
-                class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-emerald-400 uppercase bg-slate-900/60 backdrop-blur-md rounded-full border border-emerald-500/40 shadow-lg">
+                class="inline-block px-3 py-1.5 mb-4 md:mb-6 text-[10px] md:text-xs font-bold tracking-widest text-emerald-400 uppercase bg-slate-900/60 backdrop-blur-md rounded-full border border-emerald-500/40 shadow-lg">
                 Currently Innovating at Corpay
             </div>
             <h2
-                class="text-6xl md:text-7xl font-black mb-6 tracking-tight leading-tight drop-shadow-[0_0_25px_rgba(14,165,233,0.5)]">
+                class="text-4xl md:text-6xl lg:text-7xl font-black mb-4 md:mb-6 tracking-tight leading-tight drop-shadow-[0_0_25px_rgba(14,165,233,0.5)]">
                 Senior <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500">SDET</span>
             </h2>
-            <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
+            <p
+                class="text-base md:text-xl lg:text-2xl text-slate-300 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed font-light px-4">
                 Architecting robust automation frameworks and ensuring software excellence for enterprise-scale
                 applications.
             </p>
-            <div class="flex justify-center gap-4">
+            <div class="flex flex-col md:flex-row justify-center gap-4">
                 <a href="#experience-map"
-                    class="px-8 py-3.5 bg-white text-slate-900 font-semibold rounded-lg shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:bg-gray-50 transition-all hover:-translate-y-1">
+                    class="px-8 py-3.5 bg-white text-slate-900 font-bold rounded-lg shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:bg-sky-50 transition-all hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
                     Explore Mind Map
                 </a>
                 <a href="#contact"
-                    class="px-8 py-3.5 bg-transparent border border-slate-600 text-white font-semibold rounded-lg hover:bg-slate-800 transition-all hover:-translate-y-1">
+                    class="px-8 py-3.5 bg-slate-800/50 backdrop-blur-sm border border-slate-500/50 text-white font-semibold rounded-lg hover:bg-slate-800 transition-all hover:-translate-y-1">
                     Get in Touch
                 </a>
             </div>
@@ -489,6 +526,43 @@
         </div>
     </footer>
 
+    <!-- Mobile Nav Layer (Premium Full Screen Drawer) - Moved OUTSIDE Header -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-black z-[1000] flex flex-col opacity-0 pointer-events-none transition-all duration-300 transform scale-95 origin-top-right">
+
+        <!-- Internal Mobile Header (Logo + Close) -->
+        <div class="px-6 py-4 flex justify-between items-center border-b border-slate-800">
+            <span class="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400">Ramin</span>
+                Allazov
+            </span>
+            <button id="close-menu-btn"
+                class="text-slate-300 hover:text-white transition-colors p-2 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Centered Navigation Links -->
+        <div class="flex-1 flex flex-col items-center justify-center space-y-8">
+            <a href="#about"
+                class="text-2xl text-slate-300 hover:text-white font-bold transition-colors mobile-link">About</a>
+            <a href="#skills"
+                class="text-2xl text-slate-300 hover:text-white font-bold transition-colors mobile-link">Skills</a>
+            <a href="#experience"
+                class="text-2xl text-slate-300 hover:text-white font-bold transition-colors mobile-link">Experience</a>
+            <a href="#projects"
+                class="text-2xl text-slate-300 hover:text-white font-bold transition-colors mobile-link">Projects</a>
+            <a href="#education"
+                class="text-2xl text-slate-300 hover:text-white font-bold transition-colors mobile-link">Education</a>
+            <a href="#contact"
+                class="px-10 py-4 bg-gradient-to-r from-sky-600 to-indigo-600 text-white text-xl font-bold rounded-full shadow-lg mobile-link hover:shadow-sky-500/30 transition-all transform hover:scale-105">Contact
+                Me</a>
+        </div>
+    </div>
+
     <script>
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -553,11 +627,43 @@
             }
         }
 
-        // Call the function to generate and set the image when the page loads
-        window.onload = function () {
-            // generateAndSetHeroImage();
-            // Any other onload functions can be added here
-        };
+        // Create and setup Hero Image (called from window.onload)
+        async function generateAndSetHeroImage() {
+            // ... existing code ...
+        }
+
+        // --- Mobile Menu Toggle Script ---
+        // --- Mobile Menu Toggle Script ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn'); // New Close Button
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        function openMenu() {
+            if (menu) {
+                document.body.style.overflow = 'hidden'; // Lock Body Scroll
+                menu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+                menu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+            }
+        }
+
+        function closeMenu() {
+            if (menu) {
+                document.body.style.overflow = ''; // Unlock Body Scroll
+                menu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+                menu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+            }
+        }
+
+        if (btn) btn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+        // Close menu when a link is clicked
+        links.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+
 
     </script>
 
