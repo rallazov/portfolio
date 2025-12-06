@@ -92,9 +92,9 @@
         }
 
         /* BRUTE FORCE OVERRIDES to ensure Mobile Menu works even if Tailwind is cached/slow */
+        /* BRUTE FORCE OVERRIDES to ensure Mobile Menu works even if Tailwind is cached/slow */
         #mobile-menu {
-            background-color: #020617 !important;
-            /* Slate-950/Black */
+            /* Background removed to unlock Glassmorphism */
             z-index: 99999 !important;
         }
 
@@ -527,11 +527,17 @@
     </footer>
 
     <!-- Mobile Nav Layer (Premium Full Screen Drawer) - Moved OUTSIDE Header -->
+    <!-- Mobile Nav Layer (Premium Full Screen Drawer) - Moved OUTSIDE Header -->
     <div id="mobile-menu"
-        class="fixed inset-0 bg-black z-[1000] flex flex-col opacity-0 pointer-events-none transition-all duration-300 transform scale-95 origin-top-right">
+        class="fixed inset-0 bg-slate-900/80 backdrop-blur-2xl z-[1000] flex flex-col opacity-0 pointer-events-none transition-all duration-300 transform scale-95 origin-top-right overflow-hidden">
+
+        <!-- Ambient Glow Orb (Drifting Background) -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-sky-600/20 to-indigo-600/20 rounded-full blur-[100px] pointer-events-none animate-pulse">
+        </div>
 
         <!-- Internal Mobile Header (Logo + Close) -->
-        <div class="px-6 py-4 flex justify-between items-center border-b border-slate-800">
+        <div class="px-6 py-4 flex justify-between items-center border-b border-white/10 z-10">
             <span class="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400">Ramin</span>
                 Allazov
@@ -548,18 +554,37 @@
         <!-- Centered Navigation Links -->
         <div class="flex-1 flex flex-col items-center justify-center space-y-8">
             <a href="#about"
-                class="text-2xl text-slate-300 hover:text-white font-bold transition-colors mobile-link">About</a>
+                class="text-2xl text-slate-300 hover:text-white font-bold transition-all duration-500 ease-out mobile-link opacity-0 translate-y-8">About</a>
             <a href="#skills"
-                class="text-2xl text-slate-300 hover:text-white font-bold transition-colors mobile-link">Skills</a>
+                class="text-2xl text-slate-300 hover:text-white font-bold transition-all duration-500 ease-out mobile-link opacity-0 translate-y-8">Skills</a>
             <a href="#experience"
-                class="text-2xl text-slate-300 hover:text-white font-bold transition-colors mobile-link">Experience</a>
+                class="text-2xl text-slate-300 hover:text-white font-bold transition-all duration-500 ease-out mobile-link opacity-0 translate-y-8">Experience</a>
             <a href="#projects"
-                class="text-2xl text-slate-300 hover:text-white font-bold transition-colors mobile-link">Projects</a>
+                class="text-2xl text-slate-300 hover:text-white font-bold transition-all duration-500 ease-out mobile-link opacity-0 translate-y-8">Projects</a>
             <a href="#education"
-                class="text-2xl text-slate-300 hover:text-white font-bold transition-colors mobile-link">Education</a>
+                class="text-2xl text-slate-300 hover:text-white font-bold transition-all duration-500 ease-out mobile-link opacity-0 translate-y-8">Education</a>
             <a href="#contact"
-                class="px-10 py-4 bg-gradient-to-r from-sky-600 to-indigo-600 text-white text-xl font-bold rounded-full shadow-lg mobile-link hover:shadow-sky-500/30 transition-all transform hover:scale-105">Contact
+                class="px-10 py-4 bg-gradient-to-r from-sky-600 to-indigo-600 text-white text-xl font-bold rounded-full shadow-lg transition-all duration-500 ease-out transform hover:scale-105 mobile-link opacity-0 translate-y-8 hover:shadow-sky-500/30">Contact
                 Me</a>
+        </div>
+
+        <!-- Social Footer -->
+        <div class="py-8 flex justify-center gap-8 relative z-10 border-t border-white/5 mx-10">
+            <a href="https://www.linkedin.com/in/ramin-allazov/" target="_blank"
+                class="text-slate-400 hover:text-white transition-colors transform hover:scale-110">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                        clip-rule="evenodd" />
+                </svg>
+            </a>
+            <a href="mailto:mr.raminallazov@gmail.com"
+                class="text-slate-400 hover:text-white transition-colors transform hover:scale-110">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+            </a>
         </div>
     </div>
 
@@ -644,6 +669,13 @@
                 document.body.style.overflow = 'hidden'; // Lock Body Scroll
                 menu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
                 menu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+
+                // Staggered Animation for links
+                links.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.classList.remove('opacity-0', 'translate-y-8');
+                    }, 50 + (index * 100)); // 100ms delay between each item
+                });
             }
         }
 
@@ -652,6 +684,11 @@
                 document.body.style.overflow = ''; // Unlock Body Scroll
                 menu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
                 menu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+
+                // Reset links position immediately so they can slide up again next time
+                links.forEach(link => {
+                    link.classList.add('opacity-0', 'translate-y-8');
+                });
             }
         }
 
