@@ -1,0 +1,78 @@
+{
+    "name": "Ramin Allazov",
+    "children": [
+        {
+            "name": "MasterCard",
+            "role": "Sr SDET",
+            "period": "Nov 2022 – May 2025",
+            "location": "St Louis MO (Remote)",
+            "details": [
+                "DMP project (Real-time/Stand-in)",
+                "Report Portal Integration",
+                "Legacy Maintenance",
+                "Rally Reporting API",
+                "Swagger API Validation",
+                "95% Stand-In Automation",
+                "Repo Refactoring",
+                "PCF, GemFire, PuTTY",
+                "PDM Simulator/DMX Jobs"
+            ]
+        },
+        {
+            "name": "Apple",
+            "role": "Sr SDET",
+            "period": "Oct 2021 – Aug 2022",
+            "location": "Austin TX (Remote)",
+            "details": [
+                "Regression Testing",
+                "TDD Automation",
+                "Java SpringBoot fixes",
+                "Radar Bug Tracking",
+                "Pie & Kube Deployment",
+                "Charles Proxy & DocDB"
+            ]
+        },
+        {
+            "name": "Cigna",
+            "role": "Sr SDET",
+            "period": "Aug 2018 – Oct 2021",
+            "location": "Portland, OR (Remote)",
+            "details": [
+                "JIRA / User Stories",
+                "REST Services (Auth/OAUTH)",
+                "AWS Parallel Testing",
+                "REST-Assured Automation",
+                "Java & Selenium",
+                "SQL Validation",
+                "Healthcare EDI (834, 837)"
+            ]
+        },
+        {
+            "name": "Goldman Sachs",
+            "role": "Test Automation Engineer",
+            "period": "Apr 2016 – Aug 2018",
+            "location": "New York, NY",
+            "details": [
+                "Selenium/Cucumber/Gradle",
+                "Perfecto Mobile",
+                "Framework Enhancement",
+                "Jira Integration",
+                "Salesforce Workflows",
+                "BDD/TDD"
+            ]
+        },
+        {
+            "name": "Bain & Company",
+            "role": "Software Test Analyst",
+            "period": "Feb 2015 – Mar 2016",
+            "location": "Austin, TX",
+            "details": [
+                "Regression Testing (ALM)",
+                "Java Test Cases",
+                "Agile QA",
+                "Data-driven Excel",
+                "SQL Queries"
+            ]
+        }
+    ]
+}
