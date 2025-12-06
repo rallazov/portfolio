@@ -1,0 +1,214 @@
+{
+    "name": "Ramin Allazov",
+    "children": [
+        {
+            "name": "Corpay",
+            "role": "Senior SDET",
+            "period": "May 2025 – Present",
+            "location": "Remote",
+            "children": [
+                {
+                    "name": "Test Architecture",
+                    "type": "skill"
+                },
+                {
+                    "name": "AI Tools",
+                    "type": "skill"
+                },
+                {
+                    "name": "Selenium",
+                    "type": "tool"
+                },
+                {
+                    "name": "Java",
+                    "type": "tool"
+                },
+                {
+                    "name": "API Testing",
+                    "type": "skill"
+                }
+            ]
+        },
+        {
+            "name": "MasterCard",
+            "role": "Sr SDET",
+            "period": "Nov 2022 – May 2025",
+            "location": "St Louis MO (Remote)",
+            "children": [
+                {
+                    "name": "DMP project"
+                },
+                {
+                    "name": "Report Portal"
+                },
+                {
+                    "name": "Legacy Maintenance"
+                },
+                {
+                    "name": "Rally API"
+                },
+                {
+                    "name": "Swagger"
+                },
+                {
+                    "name": "Stand-In Automation"
+                },
+                {
+                    "name": "Repo Refactoring"
+                },
+                {
+                    "name": "PCF & GemFire"
+                },
+                {
+                    "name": "PuTTY & MobaxTerm"
+                },
+                {
+                    "name": "PDM Simulator"
+                },
+                {
+                    "name": "DMX Jobs"
+                },
+                {
+                    "name": "Java"
+                },
+                {
+                    "name": "Selenium"
+                },
+                {
+                    "name": "Cucumber"
+                }
+            ]
+        },
+        {
+            "name": "Apple",
+            "role": "Sr SDET",
+            "period": "Oct 2021 – Aug 2022",
+            "location": "Austin TX (Remote)",
+            "children": [
+                {
+                    "name": "Regression Testing"
+                },
+                {
+                    "name": "TDD Automation"
+                },
+                {
+                    "name": "Java SpringBoot"
+                },
+                {
+                    "name": "Radar Tracking"
+                },
+                {
+                    "name": "Pie & Kube"
+                },
+                {
+                    "name": "Charles Proxy"
+                },
+                {
+                    "name": "DocDB"
+                },
+                {
+                    "name": "Test Planning"
+                }
+            ]
+        },
+        {
+            "name": "Cigna",
+            "role": "Sr SDET",
+            "period": "Aug 2018 – Oct 2021",
+            "location": "Portland, OR (Remote)",
+            "children": [
+                {
+                    "name": "JIRA"
+                },
+                {
+                    "name": "REST Services"
+                },
+                {
+                    "name": "OAUTH"
+                },
+                {
+                    "name": "AWS"
+                },
+                {
+                    "name": "Docker"
+                },
+                {
+                    "name": "REST-Assured"
+                },
+                {
+                    "name": "Java & Selenium"
+                },
+                {
+                    "name": "SQL"
+                },
+                {
+                    "name": "Healthcare EDI"
+                },
+                {
+                    "name": "Postman"
+                }
+            ]
+        },
+        {
+            "name": "Goldman Sachs",
+            "role": "Test Automation Engineer",
+            "period": "Apr 2016 – Aug 2018",
+            "location": "New York, NY",
+            "children": [
+                {
+                    "name": "Selenium"
+                },
+                {
+                    "name": "Cucumber"
+                },
+                {
+                    "name": "Gradle"
+                },
+                {
+                    "name": "Perfecto Mobile"
+                },
+                {
+                    "name": "Framework Design"
+                },
+                {
+                    "name": "Jira Plugin"
+                },
+                {
+                    "name": "Salesforce"
+                },
+                {
+                    "name": "BDD/TDD"
+                }
+            ]
+        },
+        {
+            "name": "Bain & Company",
+            "role": "Software Test Analyst",
+            "period": "Feb 2015 – Mar 2016",
+            "location": "Austin, TX",
+            "children": [
+                {
+                    "name": "Regression Testing"
+                },
+                {
+                    "name": "HP ALM"
+                },
+                {
+                    "name": "Java"
+                },
+                {
+                    "name": "Agile QA"
+                },
+                {
+                    "name": "Data-driven Testing"
+                },
+                {
+                    "name": "Excel"
+                },
+                {
+                    "name": "SQL"
+                }
+            ]
+        }
+    ]
+}
