@@ -119,9 +119,7 @@
 
     <!-- Header/Navigation (Transparent/Glass AI Theme) -->
     <!-- Header/Navigation (Transparent/Glass AI Theme) -->
-    <header
-        class="bg-transparent backdrop-blur-sm fixed top-0 w-full z-50 transition-all duration-300 hover:bg-slate-900/90"
-        id="main-header">
+    <header class="bg-transparent fixed top-0 w-full z-50 transition-all duration-300 ease-in-out" id="main-header">
         <div class="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2 drop-shadow-lg z-50">
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400">Ramin</span>
@@ -694,6 +692,21 @@
 
         if (btn) btn.addEventListener('click', openMenu);
         if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+        // --- Dynamic Header on Scroll Script ---
+        const header = document.getElementById('main-header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                // Scrolled formatting: Dark Glass
+                header.classList.remove('bg-transparent');
+                header.classList.add('bg-slate-900/95', 'backdrop-blur-md', 'shadow-lg');
+            } else {
+                // Top formatting: Transparent
+                header.classList.add('bg-transparent');
+                header.classList.remove('bg-slate-900/95', 'backdrop-blur-md', 'shadow-lg');
+            }
+        });
 
         // Close menu when a link is clicked
         links.forEach(link => {
